@@ -106,7 +106,7 @@ cout << "lol you suck";
 }
 ```
 
-# Lab 1 B3
+# Lab 1 C
 ```c++
 #include <iostream>
 #include <iomanip>
@@ -119,21 +119,26 @@ cout << fixed << setprecision(2);
 
 int hours;
 double gross;
-double grossOVERTIME;
+double taxes;
+double takehomepay;
 
 cout << "how many hours you work?" << endl;
 cin >> hours;
 
 if (hours < 40){
-double gross = static_cast<double>(hours)*20;
-cout << "your gross income is " << gross << endl;}
-
+    gross = static_cast<double>(hours)*20;
+    cout << "regular hour pay is $" << hours << endl;
+    cout << "overtime hour pay is $0.00" << endl;}
 else {
-double grossOVERTIME = (800 + (hours - 40)*30);
-cout <<"your gross income is " << grossOVERTIME << endl;}
-// i tried to make the if statement only affect gross depending on the hours but it didnt work so i 
-// split it into gross and grossOVERTIME... i feel like i really can shorten it but it wouldnt work :(
-
+    gross = (800 + (static_cast<double>(hours) - 40)*30);
+cout<<"regular hour pay is $800.00"<<endl;
+cout<<"overtime hour pay is $" << (static_cast<double>(hours)-40)*30 <<endl;}
+    taxes = (.18)*(gross);
+    takehomepay = gross - taxes - 35;
+cout << "your gross income is $" << gross << endl;
+cout << "you are taxed $" << taxes << endl;
+cout << "your benefits fee is $35.00" << endl;
+cout << "your net take home pay is $"<< takehomepay;
  return 0;
 }
 ```
