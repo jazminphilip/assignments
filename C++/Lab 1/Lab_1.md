@@ -78,20 +78,15 @@ using namespace std;
 
 int main()
 {
-
     int games = 0;
     int wins = 0;
-    
 cout << fixed << setprecision(1);  
 cout << "how many games did you play?" << endl;
 cin >> games;
-if (games == 0)
-{
-    cout << "no games played" << endl;
-}
+
+if (games == 0){ cout << "no games played" << endl;}
+
 else {
-
-
 cout <<"how many did you win?" << endl;
 cin >> wins;
 
