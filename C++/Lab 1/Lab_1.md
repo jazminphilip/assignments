@@ -164,8 +164,6 @@ int main() {
     if (afterDiscount >= 100.0) {shipping = 0;}
     else {shipping =  5 + 2 * items;}
 
-
-
     std::cout << std::fixed << std::setprecision(2);
     std::cout << "Total: $" << total << "\n";
     std::cout << "Discount: $" << discount << "\n";
