@@ -32,7 +32,7 @@ int main(){
     double y = 12.75;
     
 cout << fixed << setprecision(2);
-cout <<"hey how much your balance is" << endl;
+cout <<"how much is your balance " << endl;
 cin >> BALANCE;
 cout <<"how many deposits you want to make? " << endl;
 cin >> DEPOSITS;
@@ -40,7 +40,7 @@ cout <<"how many withdrawals you want to make?" << endl;
 cin >> WITHDRAWALS;
     double FINAL_BALANCE = BALANCE + (DEPOSITS*x) - (WITHDRAWALS*y);
 cout << "your new balance is: " << FINAL_BALANCE << endl;
-
+return 0;
 }
 ```
 
@@ -100,9 +100,10 @@ cout << "your win percentage is " << winrate << "%" << endl;
 
 if (wins == 0)
 {
-cout << "lol you suck";
+cout << "no wins";
 
 }
+return 0;
 }
 ```
 
@@ -127,18 +128,54 @@ cin >> hours;
 
 if (hours < 40){
     gross = static_cast<double>(hours)*20;
-    cout << "regular hour pay is $" << hours << endl;
-    cout << "overtime hour pay is $0.00" << endl;}
+    cout << "regular hour pay is $" << static_cast<double>(hours)*20 << "\n";
+    cout << "overtime hour pay is $0.00" << "\n";}
 else {
     gross = (800 + (static_cast<double>(hours) - 40)*30);
 cout<<"regular hour pay is $800.00"<<endl;
-cout<<"overtime hour pay is $" << (static_cast<double>(hours)-40)*30 <<endl;}
+cout<<"overtime hour pay is $" << (static_cast<double>(hours)-40)*30 << "\n";}
     taxes = (.18)*(gross);
     takehomepay = gross - taxes - 35;
-cout << "your gross income is $" << gross << endl;
-cout << "you are taxed $" << taxes << endl;
-cout << "your benefits fee is $35.00" << endl;
+cout << "your gross income is $" << gross << "\n";
+cout << "you are taxed $" << taxes << "\n";
+cout << "your benefits fee is $35.00" << "\n";
 cout << "your net take home pay is $"<< takehomepay;
  return 0;
+}
+```
+# Lab 1 D
+```c++
+#include <iostream>
+#include <iomanip>
+int main() {
+    int items; double price;
+    std::cout << "Enter items and price: ";
+    std::cin >> items >> price;
+
+    // BUG 1: uninitialized total
+        //I changed what total was equal to from 0.0 to items * price
+    double total = items * price; 
+
+    // BUG 2: integer division
+        //I changed the code to not need static cast and instead use implicit coercion
+    int discountPercent = 15;
+    double discount = total * (discountPercent / 100.0);
+
+    // BUG 3: precedence & shipping
+        //i replaced the if with an if else statement??? the bug is hard to see
+    double afterDiscount = total - discount;
+    double shipping;
+
+    if (afterDiscount >= 100.0) {shipping = 0;}
+    else {shipping =  5 + 2 * items;}
+
+
+
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Total: $" << total << "\n";
+    std::cout << "Discount: $" << discount << "\n";
+    std::cout << "Shipping: $" << shipping << "\n";
+    std::cout << "Grand Total: $" << (afterDiscount + shipping) << "\n";
+return 0;
 }
 ```
