@@ -106,8 +106,9 @@ int temp_array[2]; //i use this heavily for swapping values
     }
 
 delete[] array;
-delete[] temp_array; //this caused a warning but kept on running anyway with my compiler, if causes error please delete this portion then run
-    return 0;
+//delete[] temp_array;
+//i originally had this and it continued to run, but there was a warning from my compiler, so i omitted as a comment to be safe
+return 0;
 }
 ```
 ## 🎯 Objective
