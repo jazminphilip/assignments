@@ -1,3 +1,8 @@
+// Name: Philip Jazmin
+// Course: CISC 192 - C++ Programming
+// Date: 11/16/2025
+// Assignment: Project-1 (Tic Tac Toe)
+
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -233,8 +238,8 @@ void playgameAI(){
 
 
 int main(){
-    tictactoe game;
-    int game_mode = 0;
+    tictactoe game; //create the game instance
+    int game_mode = 0; //to check for game mode
     std::string choice;
     
  do{
@@ -258,7 +263,7 @@ int main(){
         do{
             std::cout << "Enter Choice: ";
             std::getline(std::cin, choice);}
-        while (!(choice == "1" || choice == "2"));
+        while (!(choice == "1" || choice == "2")); //keep checking until user inputs 1 or 2
 
     if(choice == "1"){game_mode = 1;}
     if(choice == "2"){std::cout << "Quitting...";
