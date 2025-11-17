@@ -104,7 +104,7 @@ void playgame(){
         move_count++;}
     else {std::cout << "Invalid move, Choose once more" << std::endl << std::endl;}
     
-    if(checkwinner() == true){break;}
+    if(checkwinner() == true){break;} //checks for winner
 
     } while(move_count < 9);
 
@@ -143,7 +143,7 @@ int displaymenu(){
 
 if(buffer_string == "1"){return 1;}
 else if(buffer_string == "2"){return 2;}
-else {return 0;} //to quit program
+else {return 0;} //to quit program later in main
 }
 
 void playgameAI(){ 
