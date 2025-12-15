@@ -31,11 +31,8 @@ public:
         return description; 
     }; 
 
-    void setId(int idInput){ //NEW FUNCTION!!!!!!!!!!
-        id = idInput;
-    }
 };
 //PART A
-void completeTask(Task *t){ //enter an address for object, then it accesses the function associated with the object
+void completeTask(Task *t){ //enter an address for object, then it accesses the function associated with the object under the class
     t -> markCompleted();
 };
