@@ -16,8 +16,8 @@ int main(){
         displaymenu();  
         std::getline(std::cin, stringinput);
         std::cout << std::endl;
-    } while(!(stringinput == "1" || stringinput == "2" || stringinput == "3" || stringinput == "4" || stringinput == "5"));
-
+    } while(!(stringinput == "1" || stringinput == "2" || stringinput == "3" || stringinput == "4" || stringinput == "5")); //input validation...
+                                                                                                                            //menu select also depends on this unfortunately....
     choice = stringtoint(stringinput);
 
     switch(choice){
@@ -49,7 +49,7 @@ int main(){
         break;
 
         case 5:
-            return 0; //auto clears memory
+            return 0; //auto clears memory because smart pointer
         break;
     }
 } while(choice != 5);
