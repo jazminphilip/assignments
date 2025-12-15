@@ -1,3 +1,34 @@
+# UML Diagrams
+```
+┌─────────────────────────┐   ┌─────────────────────────────┐   ┌─────────────────────────────┐
+│    Part A: Task Class   │   │  Part B: Task + Functions   │   │    Part C: Task + Manager   │
+├─────────────────────────┤   ├─────────────────────────────┤   ├─────────────────────────────┤
+│ - id: int               │   │ - id: int                   │   │ - id: int                   │
+│ - description: string   │   │ - description: string       │   │ - description: string       │
+│ - completed: bool       │   │ - completed: bool           │   │ - completed: bool           │
+├─────────────────────────┤   ├─────────────────────────────┤   ├─────────────────────────────┤
+│ + Task()                │   │ + Task()                    │   │ + Task()                    │
+│ + Task(int, string)     │   │ + Task(int, string)         │   │ + Task(int, string)         │
+│ + markCompleted(): void │   │ + markCompleted(): void     │   │ + markCompleted(): void     │
+│ + isCompleted(): bool   │   │ + isCompleted(): bool       │   │ + isCompleted(): bool       │
+│ + getId(): int          │   │ + getId(): int              │   │ + getId(): int              │
+│ + getDescription(): str │   │ + getDescription(): str     │   │ + getDescription(): str     │
+└─────────────────────────┘   │ + setId(int): void          │   └─────────────────────────────┘
+                              ├─────────────────────────────┤   ┌─────────────────────────────┤
+                              │ + completeTask(Task*): void │   │      TaskManager Class      │
+                              │ + addTask(Task*, int&,      │   ├─────────────────────────────┤
+                              │   int, string): void        │   │ - tasks: unique_ptr<Task[]> │
+                              │ + removeTask(Task*, int&,   │   │ - size: int                 │
+                              │   int): void                │   │ - capacity: int             │
+                              │ + listTasks(Task*, int):    │   ├─────────────────────────────┤
+                              │   void                      │   │ + TaskManager(int)          │
+                              │ + deletelist(Task*&): void  │   │ + addTask(string): void     │
+                              │ + displaymenu(): void       │   │ + removeTask(int): void     │
+                              │ + stringtoint(string): int  │   │ + completeTask(int): void   │
+                              └─────────────────────────────┘   │ + listTasks(): void         │
+                                                                └─────────────────────────────┘
+```
+                                                              
 # Part D
 
 Answer the following:
@@ -12,7 +43,7 @@ Thirdly, smart pointers are pointers that point to the heap but automatically de
   
 2) Where and why delete was used.
 
-Delete was used in Part B beacause I was using a raw pointer to the heap. Raw pointers to the stack are automatically handled by the compiler and smart pointers have RAII so there is no need to use delete there. 
+Delete was used in Part B because I was using a raw pointer to the heap. Raw pointers to the stack are automatically handled by the compiler and smart pointers have RAII so there is no need to use delete there. 
 
 3) Explanation of ownership in each design.
 
@@ -25,3 +56,13 @@ In Part C of my code, I use unique pointers so that during the end of my code, t
 4) Which pointer method is safest and why.
 
 The safest pointer method is the smart pointer. This is because it is easy to have a memory leak, have multiple deletes, dangling pointers, or wild pointers when working with raw pointers since there is a need to always be mindful of where to delete a pointer. I would say that raw pointers to the stack are the safest since they are easiest to work with, but smart pointers have more use with how object oriented programming works with classes as a whole.
+
+# Reflection
+
+While doing this assignment, I was worried about ID and position the most. This is because I wanted all tasks to have a separate ID which increments but that their position would shift depending on what was deleted. I very confused on whether or not I was supposed to pass the ID number of what was to be deleted or the position because I did not know if I was to dynamically resize the array.
+
+I thought that this may have not been the case because we learned about the vector header file so I would just use that and because by the time I realized this I would have to rewrite my string to int function that I depended to turn the strings 1 through 5 into integers. I also saw that the dynamic resize option for part B was an optional thing but was worried because in the rubric the input for the remove task function was listed as Id.  
+
+My choose option for maenu implementation and selecting which part of the array to select both depended on the string to int function, so I would have to rewrite a lot more if I were to make dynamic sizing.
+
+I really wanted to implement the resize function, but I was already very much struggling with this assignment and overwhelmed with other classes.
