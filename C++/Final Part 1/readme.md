@@ -1,4 +1,11 @@
-# UML Diagrams
+# README SUBMISSION
+```
+Name: Philip Jazmin
+Course: C/C++ Programming CISC 192
+Instructor: Dr. Danish Khan
+```
+  In this document, the part D, the submission requirements, and my reflections are covered
+## UML Diagrams
 ```
 ┌─────────────────────────┐   ┌─────────────────────────────┐   ┌─────────────────────────────┐
 │    Part A: Task Class   │   │  Part B: Task + Functions   │   │    Part C: Task + Manager   │
@@ -29,7 +36,7 @@
                                                                 └─────────────────────────────┘
 ```
                                                               
-# Part D
+## Part D
 
 Answer the following:
 
@@ -57,7 +64,7 @@ In Part C of my code, I use unique pointers so that during the end of my code, t
 
 The safest pointer method is the smart pointer. This is because it is easy to have a memory leak, have multiple deletes, dangling pointers, or wild pointers when working with raw pointers since there is a need to always be mindful of where to delete a pointer. I would say that raw pointers to the stack are the safest since they are easiest to work with, but smart pointers have more use with how object oriented programming works with classes as a whole.
 
-# Reflection
+## Reflection
 
 While doing this assignment, I was worried about ID and position the most. This is because I wanted all tasks to have a separate ID which increments but that their position would shift depending on what was deleted. I very confused on whether or not I was supposed to pass the ID number of what was to be deleted or the position because I did not know if I was to dynamically resize the array.
 
