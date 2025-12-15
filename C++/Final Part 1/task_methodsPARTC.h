@@ -14,7 +14,7 @@ public:
 
     Task(int idinput, const std::string& descinput): id(idinput), description(descinput), completed(false) {};
 
-//    ~Task() {std::cout << "task deleted/allocated" << std::endl;};
+//    ~Task() {std::cout << "task deleted/allocated" << std::endl;}; used to see how the task creation went
 
     void markCompleted(){
         completed = true;
@@ -42,7 +42,7 @@ private:
     std::unique_ptr<Task[]> tasks;
     int size = 0;
     int capacity = 0;
-    int idcounter = 0; //SOOOO MUCH BETTER!!!!
+    int idcounter = 0; //SOOOO MUCH BETTER!!
 
 public:
     TaskManager(int initialCapacity){
@@ -55,25 +55,23 @@ public:
         std::cout << "Maximum tasks reached! (" << capacity << ")" << std::endl;
         return;
     }
-        tasks[size] = Task(idcounter, desc); //i set the id in main later so that i can increment the id past the size
+        tasks[size] = Task(idcounter, desc); //different
         size++; 
         idcounter++;
 
         std::cout<< "Added Task " << size << std::endl << std::endl;
     };
 
-    void removeTask(int input){ //input validation
+    void removeTask(int input){ //input validation implemented in main
         
     if(input > size || input <= 0){
         std::cout << "There is no task there!" << std::endl << std::endl;
         return;
     }
 
-   for(int i = input - 1; i < size - 1; i++){ //shifts all elements to the right of id left
-        tasks[i] = tasks[i + 1]; //Task(i, (tasks + i + 1) -> getDescription()); //THIS is the wroon
+   for(int i = input - 1; i < size - 1; i++){ //shifts all elements to the right of id left by one
+        tasks[i] = tasks[i + 1]; 
    }
-    
-    //tasks[i] = tasks[i + 1];
     
     std::cout << "Removed Task " << input << std::endl << std::endl;
     size--;
@@ -90,7 +88,7 @@ public:
         std::cout << "Completed Task " << position << std::endl << std::endl;
     }
 
-    void listTasks(){ //i had to watch a video to learn the syntax
+    void listTasks(){ 
         
         if(size == 0){
             std::cout << "There is no tasks" << std::endl;
@@ -99,7 +97,7 @@ public:
         
         std::cout << "TASK LIST" << std::endl;
         for(int i = 0 ; i < size ; i++){ 
-        std::cout << "Task " << i+1; //list
+        std::cout << "Task " << i + 1; //list
         std::cout << " (ID " << tasks[i].getId() + 1; //id number
         std::cout << "): " << tasks[i].getDescription(); //description
         
@@ -116,7 +114,7 @@ public:
 
 };
 
-int stringtoint(std::string input){ //for input validation and such
+int stringtoint(std::string input){ //for input validation and menu
     if (input == "1") {return 1;}
     else if (input == "2") {return 2;}
     else if(input == "3") {return 3;}
