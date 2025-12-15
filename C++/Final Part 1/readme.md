@@ -59,7 +59,7 @@ In part A, raw pointers to the stack are similar to variables. There is no delet
 
 In Part B, where raw pointers to the heap are used, I delete at the end of the main with a function. I only use one pointer that points to an array, so by deleting that pointer, it frees up the memory that is took and also sets the pointer to nullptr. 
 
-In Part C of my code, I use unique pointers so that during the end of my code, the pointer automatically frees the memory from the array of tasks. Here only one unique pointer can exist for the list of task because by going out of scope of the unique variable, the objects are deleted and the address associated with the array is freed. If I were to create an app that had multiple lists of tasks, this would probbaly be wat I would use alongside the vector header file to make the logic for removing a task from the list easier.
+In Part C of my code, I use unique pointers so that during the end of my code, the pointer automatically frees the memory from the array of tasks. Here only one unique pointer can exist for the list of task because by going out of scope of the unique variable, the objects are deleted and the address associated with the array is freed. If I were to create an app that had multiple lists of tasks, this would probabaly be what I would use alongside the vector header file to make the logic for removing a task from the list easier.
 
 4) Which pointer method is safest and why.
 
@@ -69,8 +69,8 @@ The safest pointer method is the smart pointer. This is because it is easy to ha
 
 While doing this assignment, I was worried about ID and position the most. This is because I wanted all tasks to have a separate ID which increments but that their position would shift depending on what was deleted. I very confused on whether or not I was supposed to pass the ID number of what was to be deleted or the position because I did not know if I was to dynamically resize the array.
 
-I thought that this may have not been the case because we learned about the vector header file so I would just use that and because by the time I realized this I would have to rewrite my string to int function that I depended to turn the strings 1 through 5 into integers. I also saw that the dynamic resize option for part B was an optional thing but was worried because in the rubric the input for the remove task function was listed as Id.  
+I thought that this may have not been the case because we learned about the vector header file so I would just use that and because by the time I realized this I would have to rewrite my string to int function that I depended to turn the strings 1 through 5 into integers. I also saw that the dynamic resize option for part B was an optional thing but was worried because in the rubric the input for the remove task function was listed as Id. I thought maybe that was what the rubric was asking, for us to dynamically resize, but that would be really hard without vector and using the properties of arrays.
 
 My choose option for menu implementation and selecting which part of the array to select both depended on the string to int function, so I would have to rewrite a lot more if I were to make dynamic sizing.
 
-I really wanted to implement the resize function, but I was really struggling with this assignment.
+I really wanted to implement the resize function, but I was really struggling with this assignment already.
