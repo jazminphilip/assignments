@@ -13,7 +13,7 @@ public:
 
     Task(int idinput, const std::string& descinput): id(idinput), description(descinput), completed(false) {};
 
-    //~Task() {std::cout << "task deleted/allocated" << std::endl;};
+    //~Task() {std::cout << "task deleted/allocated" << std::endl;}; used to check
 
     void markCompleted(){
         completed = true;
@@ -31,12 +31,12 @@ public:
         return description; 
     }; 
 
-    void setId(int idInput){ //NEW FUNCTION!!!!!!!!!!
+    void setId(int idInput){ //NEW FUNCTION
         id = idInput;
     }
 };
 
-void completeTask(Task *t, int position){ //enter an address for object, then it accesses the function associated with the object
+void completeTask(Task *t, int position){ 
     if(position == 0){
     std::cout << "There is no task there" << std::endl << std::endl;
     return;
@@ -51,7 +51,7 @@ void completeTask(Task *t, int position){ //enter an address for object, then it
 };
 
 //PART B
-void addTask(Task* tasks, int &size, int capacity, const std::string& desc){ //input a array, then the element in the array, then the size, then the description
+void addTask(Task* tasks, int &size, int capacity, const std::string& desc){ 
     if (size >= capacity){
         std::cout << "Maximum tasks reached! (" << capacity << ")" << std::endl;
         return;
@@ -69,7 +69,7 @@ void removeTask(Task* tasks, int& size, int input){
     }
 
    for(int i = input - 1; i < size - 1; i++){ //shifts all elements to the right of id left
-    *(tasks + i) = *(tasks + i + 1); //Task(i, (tasks + i + 1) -> getDescription()); //THIS is the wroon
+    *(tasks + i) = *(tasks + i + 1); 
    }
     
     *(tasks + size - 1) = Task();
