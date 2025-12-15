@@ -10,7 +10,7 @@ int main(){
     int idnumber = 1;
     int helpvar = 0;
 
-    Task* tasks = new Task[capacity]; //an array of tasks with index 0 to capacity - 1 POINTER TO HEAP
+    Task* tasks = new Task[capacity]; //an array of tasks with index 0 to capacity - POINTER TO HEAP
 
 do{
     do{
@@ -18,7 +18,7 @@ do{
     std::getline(std::cin, input);
     std::cout << std::endl;
     }
-    while(!(input == "1" || input == "2" || input == "3" || input == "4" || input == "5")); //demorgans law wow thank you
+    while(!(input == "1" || input == "2" || input == "3" || input == "4" || input == "5")); //demorgans law 
     
     choice = stringtoint(input);
 
@@ -34,8 +34,8 @@ do{
                 break;
             }
 
-            if(size <= capacity){ //need to make it so that it doesnt happen if the add task doesnt work
-                (tasks + size - 1) -> setId(idnumber); //needs to EXCLUSIVELY in main, not the function
+            if(size <= capacity){ 
+                (tasks + size - 1) -> setId(idnumber); 
             idnumber++;
             }
             break;
@@ -53,8 +53,8 @@ do{
             std::cout << "Enter the number of which task to complete: ";
             std::getline(std::cin, input);}
             while (stringtoint(input) == 0);
-            completeTask(tasks + stringtoint(input) - 1, stringtoint(input)); //uses part A function? was i supposed to?
-            break;                                      //tasks + input - 1 is the first, second,... element
+            completeTask(tasks + stringtoint(input) - 1, stringtoint(input)); //different from the part A function
+            break;                                     
 
         case 4:
             listTasks(tasks, size); 
