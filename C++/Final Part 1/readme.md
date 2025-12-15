@@ -71,6 +71,6 @@ While doing this assignment, I was worried about ID and position the most. This 
 
 I thought that this may have not been the case because we learned about the vector header file so I would just use that and because by the time I realized this I would have to rewrite my string to int function that I depended to turn the strings 1 through 5 into integers. I also saw that the dynamic resize option for part B was an optional thing but was worried because in the rubric the input for the remove task function was listed as Id.  
 
-My choose option for maenu implementation and selecting which part of the array to select both depended on the string to int function, so I would have to rewrite a lot more if I were to make dynamic sizing.
+My choose option for menu implementation and selecting which part of the array to select both depended on the string to int function, so I would have to rewrite a lot more if I were to make dynamic sizing.
 
-I really wanted to implement the resize function, but I was already very much struggling with this assignment and overwhelmed with other classes.
+I really wanted to implement the resize function, but I was really struggling with this assignment.
